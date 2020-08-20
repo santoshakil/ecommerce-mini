@@ -8,17 +8,17 @@ class ProductListTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<AppStateModel>(
-      builder: (context, model, child){
+      builder: (context, model, child) {
         final products = model.getProducts();
-        return  CustomScrollView(
+        return CustomScrollView(
           semanticChildCount: products.length,
           slivers: <Widget>[
             CupertinoSliverNavigationBar(
-              largeTitle: Text('Cupertino Store'),
+              largeTitle: Text('Hamim Shop'),
             ),
             SliverSafeArea(
               top: false,
-              minimum: const EdgeInsets.only(top:8),
+              minimum: const EdgeInsets.only(top: 8),
               sliver: SliverList(
                 delegate: SliverChildBuilderDelegate((context, index) {
                   if (index < products.length) {
