@@ -5,11 +5,8 @@ import 'app.dart';
 import 'model/app_state_model.dart';
 
 void main() {
-  return runApp(
-    ChangeNotifierProvider<AppStateModel>(
-      create: (_) => AppStateModel()..loadProducts() ,
-      child: CupertinoStoreApp(),  
-    )
-  );
+  return runApp(ChangeNotifierProvider<AppStateModel>(
+    create: (_) => AppStateModel()..loadProducts(),
+    child: CupertinoStoreApp(),
+  ));
 }
-
