@@ -81,43 +81,10 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
     );
   }
 
-  Widget _buildDateTimePicker(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: const <Widget>[
-                Icon(
-                  CupertinoIcons.clock,
-                  color: CupertinoColors.lightBackgroundGray,
-                  size: 28,
-                ),
-                SizedBox(
-                  width: 6,
-                ),
-                Text(
-                  'Delivery Time',
-                  style: Styles.deliveryTimeLabel,
-                )
-              ],
-            ),
-            Text(
-              DateFormat.yMMMd().add_jm().format(dateTime),
-              style: Styles.deliveryTime,
-            )
-          ],
-        ),
-      ],
-    );
-  }
-
   SliverChildBuilderDelegate _buildSliverChildBuilderDelegate(
       AppStateModel model) {
     return SliverChildBuilderDelegate((context, index) {
-      final productIndex = index - 4;
+      final productIndex = index - 3;
       switch (index) {
         case 0:
           return Padding(
@@ -135,12 +102,6 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: _buildLocationField(),
-          );
-          break;
-        case 3:
-          return Padding(
-            padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
-            child: _buildDateTimePicker(context),
           );
           break;
         default:
